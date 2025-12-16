@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shyrine Juliet Espinosa | My Profile</title>
+    <style>
+        /* ==================================================
+          REDESIGNED CSS (style.css) - DARK MODE WITH WINE RED
+        ==================================================
+        */
+
+        /* --- 1. Base Styles & Body --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* --- 2. Navigation Bar (Header) --- */
+        .navbar {
+            background-color: #8b0000; /* Changed from #333 to wine red */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar nav {
+            text-align: center;
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #a52a2a; /* Darker wine red for hover */
+            border-radius: 4px;
+        }
+
+        /* --- 3. Main Two-Column Layout (Flexbox) --- */
+        #main-content {
+            display: flex;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .left-column {
+            flex: 1;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-right: 1px solid #444;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .right-column {
+            flex: 2;
+            padding: 30px;
+        }
+
+        /* --- 4. Profile & Job Title Styling --- */
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #8b0000; /* Changed from #007bff to wine red */
+            margin-bottom: 15px;
+        }
+
+        .left-column h2 {
+            color: #8b0000; /* Changed from #007bff to wine red */
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* B. Edit Job Title Container */
+        .job-title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .job-title {
+            font-style: italic;
+            color: #ccc;
+            margin-right: 10px;
+        }
+
+        /* Small Button Styling (for Edit Title and Toggle Skills) */
+        .small-btn {
+            padding: 4px 8px;
+            font-size: 0.8em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .small-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        /* --- 5. Content Headings & Skills --- */
+        .right-column h2 {
+            border-bottom: 2px solid #8b0000; /* Changed from #007bff to wine red */
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .left-column h3 {
+            color: #8b0000; /* Changed from #007bff to wine red */
+            border-bottom: 1px dashed #555;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .skills-list dl {
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        .skills-list dd {
+            margin-left: 0;
+            padding: 3px 0;
+            color: #ccc;
+        }
+
+        /* G2. Quote Styling */
+        #quoteDisplay {
+            font-style: italic;
+            color: #8b0000; /* Changed from #007bff to wine red */
+            font-size: 1.1em;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px dashed #555;
+            border-radius: 4px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        /* --- 6. Message Form Section --- */
+        .message-section {
+            padding-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid #444;
+        }
+
+        .message-section input[type="text"],
+        .message-section input[type="email"],
+        .message-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            resize: vertical;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .message-section textarea {
+            min-height: 100px;
+        }
+
+        .message-section input:focus, .message-section textarea:focus {
+            border-color: #8b0000; /* Changed from #007bff to wine red */
+            outline: none;
+        }
+
+        .message-section input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .message-section input[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+
+        /* --- 7. Footer & Separator --- */
+        .main-footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .hr-separator {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+
+        /* --- 8. Responsiveness --- */
+        @media (max-width: 768px) {
+            #main-content {
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid #444;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <nav>
+        <h2>
+            <a href="#home">Home</a> |
+            <a href="#about-section">About Me</a>
+        </h2>
+    </nav>
+</header>
+
+<div id="main-content">
+
+    <div class="left-column">
+        <section id="home">
+            <h3 id="greetingMessage"></h3>
+            <img src="https://uploads.onecompiler.io/4453et735/4453ebzk8/Media.jpg" alt="Profile Image" class="profile-img">
+            <h2>Shyrine Juliet Espinosa</h2>
+        </section>
+
+        <div class="hr-separator"></div>
+
+        <div class="job-title-container">
+            <span id="jobTitleElement" class="job-title">Web Developer</span>
+            <button id="editJobBtn" class="small-btn">Edit Title</button>
+        </div>
+
+        <div class="hr-separator"></div>
+
+        <h3>Contact</h3>
+        <p>Email: shyrinejulietespinosa@gmail.com</p>
+
+        <div class="hr-separator"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3>Skills</h3>
+            <button id="toggleSkillsBtn" class="small-btn">Hide Skills</button>
+        </div>
+
+        <div id="skillsSection" class="skills-list">
+            <dl>
+                <dd>HTML</dd>
+                <dd>CSS</dd>
+                <dd>JavaScript</dd>
+            </dl>
+        </div>
+
+    </div>
+
+    <div class="right-column">
+
+        <section id="about-section">
+            <h2>About Me</h2>
+
+            <p>Hello! I'm Shyrine Juliet Espinosa, an aspiring web developer passionate about creating engaging and user-friendly web experiences. I enjoy bringing ideas to life through code and continuously learning new technologies.</p>
+            <p>My journey in web development started with a curiosity for how websites work, which quickly grew into a passion for building them. I'm dedicated to writing clean, efficient, and maintainable code.</p>
+
+            <div class="hr-separator"></div>
+            <div style="text-align: center; margin-top: 15px;">
+                <p id="quoteDisplay">
+                    Click below for a motivational quote.
+                </p>
+                <button id="quoteBtn" style="margin-bottom: 20px;">Get New Quote</button>
+            </div>
+
+        </section>
+
+        <section class="message-section">
+            <h2>Message Me</h2>
+
+            <form action="#" method="post" id="messageForm">
+
+                <p>
+                    <label for="nameField">Name:</label><br>
+                    <input type="text" id="nameField" name="name">
+                </p>
+
+                <p>
+                    <label for="emailField">Email:</label><br>
+                    <input type="email" id="emailField" name="email">
+                </p>
+
+                <p>
+                    <label for="msgBox">Message (Max 200 chars):</label><br>
+                    <textarea id="msgBox" name="message-text" maxlength="200"></textarea>
+                    <p style="text-align: right; font-size: 0.9em; color: gray;">Characters left: <span id="counter">200</span></p>
+
+                <p>
+                    <input type="submit" value="Send" onclick="return validateForm(event)">
+                </p>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</div>
+
+<footer class="main-footer">
+    <p><strong id="dateDisplay"></strong></p>
+    <p><strong>WebProg - Web Programming 2025</strong></p>
+    <p><strong>WebProg - Web Programming 2025</strong></p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // B. Add “Edit Job Title” Feature
+        setupJobTitleEdit();
+
+        // C. Add “Show/Hide Skills” Feature
+        setupSkillsToggle();
+
+        // D. Add a “Live Character Counter”
+        setupCharCounter();
+
+        // F. Display Today’s Date in Footer
+        displayCurrentDate();
+
+        // G1. Extra Feature: Greeting Based on Time
+        displayTimeGreeting();
+
+        // G2. Extra Feature: Random Quote Generator
+        setupQuoteGenerator();
+    });
+
+    // B. Edit Job Title Function
+    function setupJobTitleEdit() {
+        const editJobBtn = document.getElementById('editJobBtn');
+        const jobTitleElement = document.getElementById('jobTitleElement');
+
+        if (editJobBtn && jobTitleElement) {
+            editJobBtn.addEventListener('click', () => {
+                const currentTitle = jobTitleElement.textContent;
+                const newTitle = prompt('Enter the new job title:', currentTitle);
+
+                if (newTitle !== null && newTitle.trim() !== '') {
+                    jobTitleElement.textContent = newTitle.trim();
+                }
+            });
+        }
+    }
+
+    // C. Skills Toggle Function
+    function setupSkillsToggle() {
+        const toggleBtn = document.getElementById('toggleSkillsBtn');
+        const skillsSection = document.getElementById('skillsSection');
+
+        if (toggleBtn && skillsSection) {
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = skillsSection.style.display === 'none';
+
+                if (isHidden) {
+                    skillsSection.style.display = 'block';
+                    toggleBtn.textContent = 'Hide Skills';
+                } else {
+                    skillsSection.style.display = 'none';
+                    toggleBtn.textContent = 'Show Skills';
+                }
+            });
+        }
+    }
+
+    // D. Character Counter Function
+    function setupCharCounter() {
+        const msgBox = document.getElementById('msgBox');
+        const counterSpan = document.getElementById('counter');
+        const MAX_LENGTH = 200;
+
+        if (msgBox && counterSpan) {
+            msgBox.addEventListener('input', () => {
+                const currentLength = msgBox.value.length;
+                const remaining = MAX_LENGTH - currentLength;
+
+                counterSpan.textContent = remaining;
+
+                if (remaining < 20) {
+                    counterSpan.style.color = 'red';
+                } else {
+                    counterSpan.style.color = 'gray';
+                }
+            });
+        }
+    }
+
+    // E. Form Validation Function
+    function validateForm(event) {
+        const nameField = document.getElementById('nameField').value.trim();
+        const emailField = document.getElementById('emailField').value.trim();
+
+        if (nameField === '' || emailField === '') {
+            event.preventDefault();
+            alert('Validation Error: Please fill out both the Name and Email fields before sending the message.');
+            return false;
+        }
+
+        alert('Message form validated successfully! (Submission prevented for demo.)');
+        event.preventDefault();
+        return true;
+    }
+
+    // F. Display Current Date Function
+    function displayCurrentDate() {
+        const dateElement = document.getElementById('dateDisplay');
+        if (dateElement) {
+            dateElement.textContent = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+    }
+
+    // G1. Time-Based Greeting Function
+    function displayTimeGreeting() {
+        const greetingElement = document.getElementById('greetingMessage');
+        if (greetingElement) {
+            const hour = new Date().getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = 'Good Morning☀️';
+            } else if (hour < 18) {
+                greeting = 'Good Afternoon! ☕';
+            } else {
+                greeting = 'Good Evening! 🌙';
+            }
+
+            greetingElement.textContent = greeting;
+        }
+    }
+
+    // G2. Quote Generator Function
+    function setupQuoteGenerator() {
+        const quotes = [
+            "The best way to predict the future is to create it.",
+            "Strive not to be a success, but rather to be of value.",
+            "The only way to do great work is to love what you do.",
+            "Patience is the companion of wisdom.",
+            "It does not matter how slowly you go as long as you do not stop.",
+            "Time is gold."
+        ];
+
+        const quoteBtn = document.getElementById('quoteBtn');
+        const quoteDisplay = document.getElementById('quoteDisplay');
+
+        if (quoteBtn && quoteDisplay) {
+            quoteBtn.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                const newQuote = quotes[randomIndex];
+
+                quoteDisplay.textContent = newQuote;
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
